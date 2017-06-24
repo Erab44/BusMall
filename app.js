@@ -14,3 +14,14 @@ function Image(name, path) {
 var bag = new Image('bag', './assets/bag.jpg');
 var banana = new Image('banana', './assets/banana.jpg');
 var bathroom = new Image('bathroom', './assets/bathroom.jpg');
+
+// need an event listener to track which item is clicked, then to log that choice.  And then to refresh the page with 3 new images
+
+var imageElement = document.body;
+
+imageElement.addEventListener('clicked', imageClicked);
+
+function imageClicked(event) {
+  event.preventDefault();
+  console.log(event.target);
+}
