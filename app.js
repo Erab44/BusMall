@@ -17,7 +17,7 @@ var bathroom = new Image('bathroom', './assets/bathroom.jpg');
 
 // need an event listener to track which item is clicked, then to log that choice.  And then to refresh the page with 3 new images
 
-var imageElement = document.body;
+var imageElement = document.img;
 
 imageElement.addEventListener('clicked', imageClicked);
 
