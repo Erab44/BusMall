@@ -1,14 +1,15 @@
 'use strict';
 
-var firstImageEl = document.getElementsByClassName('first-image')[0];
-var secondImageEl = document.getElementsByClassName('second-image')[0];
-var thirdImageEl = document.getElementsByClassName('third-image')[0];
+var items = [];
+var round = 0;
+
 
 function Image(name, path) {
   this.name = name;
   this.path = path;
   this.shown = 0;
   this.clicked = 0;
+
 }
 
 var bag = new Image('bag', './assets/bag.jpg');
@@ -31,5 +32,14 @@ var usb = new Image('usb', './assets/usb.gif');
 var waterCan = new Image('water-can', './assets/water-can.jpg');
 var wineGlass = new Image('wine-glass', './assets/wine-glass.jpg');
 
-// need an event listener to track which item is clicked, then to log that choice.  And then to refresh the page with 3 new images
-console.log(Image);
+var allImages = [bag, banana, bathroom, boots, breakfast, chair, cthulhu, dogDuck, dragon, pen, petSweep, scissors, shark, sweep, tauntaun, unicorn, usb, waterCan, wineGlass];
+
+function getRandomNum(min, max) {
+  return Math.ceiling(Math.random() * (max - min) + min);
+};
+
+var numClicks = 0;
+
+var previousThree = [];
+
+function randomImage()
